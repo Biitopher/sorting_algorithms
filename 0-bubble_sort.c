@@ -1,10 +1,17 @@
 #include "sort.h"
 
+/**
+ * swap - function to swap characters
+ * @x: character
+ * @y: character
+ * Return: Nothing
+ */
+
 void swap(int *x, int *y)
 {
-    int temp = *x;
-    *x = *y;
-    *y = temp;
+	int temp = *x;
+	*x = *y;
+	*y = temp;
 }
 
 /**
@@ -16,16 +23,16 @@ void swap(int *x, int *y)
 
 void bubble_sort(int *array, size_t size)
 {
-        size_t a, b;
+	size_t a, b;
 
-        for (a = 0; a < size - 1; ++a)
-        {
-                for (b = 0; b < size - a - 1; ++b)
-                {
-                        if (array[b] > array[b + 1])
-                        {
-                                swap(&array[b], &array[b + 1]);
-                        }
-                }
-        }
+	for (a = 0; a < size - 1; ++a)
+	{
+		for (b = 0; b < size - a - 1; ++b)
+		{
+			if (array[b] > array[b + 1])
+			{
+				swap(&array[b], &array[b + 1]);
+			}
+		}
+	}
 }
