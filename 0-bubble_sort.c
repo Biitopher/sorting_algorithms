@@ -1,38 +1,35 @@
 #include "sort.h"
 
 /**
- * swap - function to swap characters
- * @x: character
- * @y: character
- * Return: Nothing
+ * bubble_sort - Function to sort array
+ *
+ * @array: The array to be sorted
+ * @size: Size of the array
  */
-
-void swap(int *x, int *y)
-{
-	int temp = *x;
-	*x = *y;
-	*y = temp;
-}
-
-/**
- * bubble_sort - function that sorts an array of integers in ascending order
- * @array: array of integers to be sorted
- * @size: size of data
- * Return: Nothing
- */
-
 void bubble_sort(int *array, size_t size)
 {
-	size_t a, b;
+	size_t i, j;
+	int temp;
+	int swapped;
 
-	for (a = 0; a < size - 1; ++a)
+	if (array == NULL || size < 2)
+		return;
+	for (i = 0; i < size; i++)
 	{
-		for (b = 0; b < size - a - 1; ++b)
+		swapped = 0;
+		for (j = 0; j < size - i - 1; j++)
 		{
-			if (array[b] > array[b + 1])
+			if (array[j] > array[j + 1])
 			{
-				swap(&array[b], &array[b + 1]);
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+				swapped = 1;
+
+				print_array(array, size);
 			}
 		}
+		if (!swapped)
+			break;
 	}
 }
