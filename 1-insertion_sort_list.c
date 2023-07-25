@@ -1,6 +1,23 @@
 #include "sort.h"
 
 /**
+ * free_list - Frees a doubly linked list
+ *
+ * @list: Pointer to the head of the list
+ */
+void free_list(listint_t *list)
+{
+	listint_t *current = list;
+
+	while (current != NULL)
+	{
+		listint_t *temp = current;
+		current = current->next;
+		free(temp);
+	}
+}
+
+/**
  * insertion_sort_list - Sorts doubly linked list in ascending order
  *
  * @list: Pointer to a pointer  of the list
