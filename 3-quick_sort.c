@@ -66,3 +66,4 @@ int lomuto_partition(int *array, int low, int high)
 
 	return (i + 1);
 }
+
