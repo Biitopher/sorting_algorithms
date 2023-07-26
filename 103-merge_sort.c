@@ -4,16 +4,16 @@
  * merge - sorts an array of integers in ascending order using the Merge sort
  * @left: pointer to the left elements
  * @right: pointer to elements on the right
- * @left_s: left size
- * @right_s: right size
+ * @temp: position
+ * @middle: position
  * @array: size of array
  */
 
-void merge(int *left, size_t left_s, int *right, size_t right_s, int *array)
+void merge(int *left, size_t temp, int *right, size_t middle, int *array)
 {
 	size_t i = 0, j = 0, k = 0;
 
-	while (i < left_s && j < right_s)
+	while (i < temp && j < middle)
 	{
 		if (left[i] <= right[j])
 		{
@@ -27,7 +27,7 @@ void merge(int *left, size_t left_s, int *right, size_t right_s, int *array)
 		}
 		k++;
 	}
-	while (i < left_s)
+	while (i < temp)
 	{
 		array[k] = left[i];
 		i++;
