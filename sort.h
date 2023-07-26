@@ -33,6 +33,8 @@ size_t knuth_sequence(size_t size);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void merge(int *left, size_t temp, int *right, size_t middle, int *array);
+void cocktail_sort_list(listint_t **list);
+void swap(listint_t **list, listint_t *node1, listint_t *node2);
 
 
 #endif
